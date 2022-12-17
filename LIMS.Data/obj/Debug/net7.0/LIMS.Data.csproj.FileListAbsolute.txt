@@ -1,0 +1,14 @@
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.csproj.AssemblyReference.cache
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.AssemblyInfoInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.AssemblyInfo.cs
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.csproj.CoreCompileInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Data\bin\Debug\net7.0\LIMS.Data.deps.json
+E:\LimsPlatform\lims-production\LIMS.Data\bin\Debug\net7.0\LIMS.Data.runtimeconfig.json
+E:\LimsPlatform\lims-production\LIMS.Data\bin\Debug\net7.0\LIMS.Data.dll
+E:\LimsPlatform\lims-production\LIMS.Data\bin\Debug\net7.0\LIMS.Data.pdb
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.dll
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\refint\LIMS.Data.dll
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.pdb
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\LIMS.Data.genruntimeconfig.cache
+E:\LimsPlatform\lims-production\LIMS.Data\obj\Debug\net7.0\ref\LIMS.Data.dll

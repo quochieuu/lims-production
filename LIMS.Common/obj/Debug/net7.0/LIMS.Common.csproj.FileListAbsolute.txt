@@ -1,0 +1,12 @@
+E:\LimsPlatform\lims-production\LIMS.Common\bin\Debug\net7.0\LIMS.Common.deps.json
+E:\LimsPlatform\lims-production\LIMS.Common\bin\Debug\net7.0\LIMS.Common.dll
+E:\LimsPlatform\lims-production\LIMS.Common\bin\Debug\net7.0\LIMS.Common.pdb
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.csproj.AssemblyReference.cache
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.AssemblyInfoInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.AssemblyInfo.cs
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.csproj.CoreCompileInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.dll
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\refint\LIMS.Common.dll
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.pdb
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\ref\LIMS.Common.dll

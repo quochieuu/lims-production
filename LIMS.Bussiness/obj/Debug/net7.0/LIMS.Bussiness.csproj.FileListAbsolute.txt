@@ -1,0 +1,12 @@
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Bussiness.deps.json
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Bussiness.dll
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Bussiness.pdb
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.csproj.AssemblyReference.cache
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.GeneratedMSBuildEditorConfig.editorconfig
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.AssemblyInfoInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.AssemblyInfo.cs
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.csproj.CoreCompileInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.dll
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\refint\LIMS.Bussiness.dll
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.pdb
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\ref\LIMS.Bussiness.dll

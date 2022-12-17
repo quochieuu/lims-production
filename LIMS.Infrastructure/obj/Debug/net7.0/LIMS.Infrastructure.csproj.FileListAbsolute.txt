@@ -1,0 +1,12 @@
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\bin\Debug\net7.0\LIMS.Infrastructure.deps.json
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\bin\Debug\net7.0\LIMS.Infrastructure.dll
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\bin\Debug\net7.0\LIMS.Infrastructure.pdb
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.csproj.AssemblyReference.cache
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.AssemblyInfoInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.AssemblyInfo.cs
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.csproj.CoreCompileInputs.cache
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.dll
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\refint\LIMS.Infrastructure.dll
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.pdb
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\ref\LIMS.Infrastructure.dll
