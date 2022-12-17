@@ -5,12 +5,328 @@
       "PackagePath": "staticwebassets\\LIMS.WebApp.bundle.scp.css"
     },
     {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\404.html",
+      "PackagePath": "staticwebassets\\admin\\404.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\auth-create.html",
+      "PackagePath": "staticwebassets\\admin\\auth-create.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\auth-lock.html",
+      "PackagePath": "staticwebassets\\admin\\auth-lock.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\auth-login.html",
+      "PackagePath": "staticwebassets\\admin\\auth-login.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\contacts.html",
+      "PackagePath": "staticwebassets\\admin\\contacts.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\css\\common.css",
+      "PackagePath": "staticwebassets\\admin\\css\\common.css"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\css\\vendor.min.css",
+      "PackagePath": "staticwebassets\\admin\\css\\vendor.min.css"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\customer-account.html",
+      "PackagePath": "staticwebassets\\admin\\customer-account.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\customers.html",
+      "PackagePath": "staticwebassets\\admin\\customers.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\file-manager.html",
+      "PackagePath": "staticwebassets\\admin\\file-manager.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\fonts\\Comfortaa-Bold.woff2",
+      "PackagePath": "staticwebassets\\admin\\fonts\\Comfortaa-Bold.woff2"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\fonts\\Roboto-Bold.woff2",
+      "PackagePath": "staticwebassets\\admin\\fonts\\Roboto-Bold.woff2"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\fonts\\Roboto-Medium.woff2",
+      "PackagePath": "staticwebassets\\admin\\fonts\\Roboto-Medium.woff2"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\fonts\\Roboto-Regular.woff2",
+      "PackagePath": "staticwebassets\\admin\\fonts\\Roboto-Regular.woff2"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\auth-bg.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\auth-bg.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\checked-failed.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\checked-failed.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\checked-success.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\checked-success.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\credit-card.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\credit-card.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\credit-mastercard-dark.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\credit-mastercard-dark.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\credit-mastercard.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\credit-mastercard.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\credit-visa-dark.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\credit-visa-dark.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\credit-visa.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\credit-visa.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\file-doc.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\file-doc.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\file-pdf.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\file-pdf.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\flags\\au.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\flags\\au.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\flags\\cn.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\flags\\cn.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\flags\\gb.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\flags\\gb.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\flags\\ru.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\flags\\ru.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\flags\\us.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\flags\\us.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-1.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-1.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-10.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-10.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-2.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-2.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-3.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-3.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-4.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-4.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-5.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-5.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-6.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-6.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-7.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-7.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-8.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-8.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans-2\\item-9.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans-2\\item-9.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-1.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-1.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-2.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-2.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-3.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-3.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-4.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-4.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-5.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-5.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-6.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-6.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-7.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-7.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-8.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-8.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\humans\\item-9.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\humans\\item-9.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\logotype.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\logotype.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\placeholder.svg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\placeholder.svg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\product\\thumb-2.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\product\\thumb-2.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\item-1 (1).jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\item-1 (1).jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\item-1.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\item-1.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\item-2.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\item-2.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\item-3.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\item-3.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\item-4.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\item-4.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\item-5.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\item-5.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\thumb-1.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\thumb-1.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\thumb-2.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\thumb-2.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\timeline\\thumb-3.jpg",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\timeline\\thumb-3.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\img\\content\\visa-logo.png",
+      "PackagePath": "staticwebassets\\admin\\img\\content\\visa-logo.png"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\index.html",
+      "PackagePath": "staticwebassets\\admin\\index.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\js\\common.js",
+      "PackagePath": "staticwebassets\\admin\\js\\common.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\js\\gsap\\ScrollToPlugin.min.js",
+      "PackagePath": "staticwebassets\\admin\\js\\gsap\\ScrollToPlugin.min.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\js\\gsap\\ScrollTrigger.min.js",
+      "PackagePath": "staticwebassets\\admin\\js\\gsap\\ScrollTrigger.min.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\js\\gsap\\gsap.min.js",
+      "PackagePath": "staticwebassets\\admin\\js\\gsap\\gsap.min.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\js\\photoswipe\\photoswipe-lightbox.esm.min.js",
+      "PackagePath": "staticwebassets\\admin\\js\\photoswipe\\photoswipe-lightbox.esm.min.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\js\\photoswipe\\photoswipe.esm.min.js",
+      "PackagePath": "staticwebassets\\admin\\js\\photoswipe\\photoswipe.esm.min.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\js\\vendor.min.js",
+      "PackagePath": "staticwebassets\\admin\\js\\vendor.min.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\order-messages.html",
+      "PackagePath": "staticwebassets\\admin\\order-messages.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\order-notes.html",
+      "PackagePath": "staticwebassets\\admin\\order-notes.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\products.html",
+      "PackagePath": "staticwebassets\\admin\\products.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\timeline.html",
+      "PackagePath": "staticwebassets\\admin\\timeline.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\todo.html",
+      "PackagePath": "staticwebassets\\admin\\todo.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\admin\\ui-kit.html",
+      "PackagePath": "staticwebassets\\admin\\ui-kit.html"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\been-together\\avatars\\85ea6f2e-9eee-4625-afb9-e01830344937.jpg",
+      "PackagePath": "staticwebassets\\been-together\\avatars\\85ea6f2e-9eee-4625-afb9-e01830344937.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\been-together\\avatars\\bce26921-2d38-4a9b-8b57-14bbaed9a496.jpg",
+      "PackagePath": "staticwebassets\\been-together\\avatars\\bce26921-2d38-4a9b-8b57-14bbaed9a496.jpg"
+    },
+    {
       "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\img\\avatar-placeholder.jpg",
+      "PackagePath": "staticwebassets\\img\\avatar-placeholder.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\js\\bootstrap-tagsinput.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap-tagsinput.js"
     },
     {
       "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\js\\site.js",
@@ -243,6 +559,46 @@
     {
       "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\plugins\\datepicker\\mc-calendar.min.css",
+      "PackagePath": "staticwebassets\\plugins\\datepicker\\mc-calendar.min.css"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\plugins\\datepicker\\mc-calendar.min.js",
+      "PackagePath": "staticwebassets\\plugins\\datepicker\\mc-calendar.min.js"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\04e61c27-d543-461e-95c1-f03ce881028f.png",
+      "PackagePath": "staticwebassets\\posts\\images\\04e61c27-d543-461e-95c1-f03ce881028f.png"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\153076f5-d874-4014-b69f-218a46c0bb92.jpg",
+      "PackagePath": "staticwebassets\\posts\\images\\153076f5-d874-4014-b69f-218a46c0bb92.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\8f66b167-4a8c-4384-a03c-24f370b3c137.jpg",
+      "PackagePath": "staticwebassets\\posts\\images\\8f66b167-4a8c-4384-a03c-24f370b3c137.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\969f453f-1ac9-4f55-b99f-34ec24806551.jpg",
+      "PackagePath": "staticwebassets\\posts\\images\\969f453f-1ac9-4f55-b99f-34ec24806551.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\c0fd252c-553c-48ad-8079-676e1b981f0e.jpg",
+      "PackagePath": "staticwebassets\\posts\\images\\c0fd252c-553c-48ad-8079-676e1b981f0e.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\c418d71f-4fa3-4f7e-a5c6-6a4c45e34f4d.jpg",
+      "PackagePath": "staticwebassets\\posts\\images\\c418d71f-4fa3-4f7e-a5c6-6a4c45e34f4d.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\cb731d0a-7f8d-4949-ac1d-3488d821c4c8.jpg",
+      "PackagePath": "staticwebassets\\posts\\images\\cb731d0a-7f8d-4949-ac1d-3488d821c4c8.jpg"
+    },
+    {
+      "Id": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\posts\\images\\f1086c39-5b54-49a1-97bb-2155494d1fb9.png",
+      "PackagePath": "staticwebassets\\posts\\images\\f1086c39-5b54-49a1-97bb-2155494d1fb9.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.LIMS.WebApp.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,0 +1,380 @@
+﻿@model LIMS.Common.Helpers.PaginatedList<LIMS.Data.Entities.PostPlace>
+
+@{
+    ViewData["Title"] = "List Places";
+}
+@*Modal*@
+<div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
+    <div class="modal__overlay" data-dismiss="modal"></div>
+    <div class="modal__wrap">
+        <div class="modal__window">
+            <form asp-action="Create" method="post" id="createForm">
+                <div class="modal__content">
+                    <div class="modal__body">
+                        <h3>Create new place</h3>
+                        <div class="modal__container">
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Name</label>
+                                <div class="input-group">
+                                    <input class="input" name="Name" type="text" placeholder="Name..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Description</label>
+                                <div class="input-group">
+                                    <textarea class="input" name="Description" type="text" placeholder="Description..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-compact__buttons">
+                        <div class="modal-compact__button-item">
+                            <button type="button" id="createFormBtn" class="modal-compact__button button">
+                                <span class="button__text">
+                                    Add new place
+                                </span>
+                            </button>
+                        </div>
+                        <div class="modal-compact__button-item">
+                            <button class="modal-compact__button button" data-dismiss="modal">
+                                <span class="button__text">Close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@*./ Modal*@
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-header__title" style="font-size: 18px">Places</h1>
+    </div>
+    <div class="toolbox">
+        <div class="toolbox__row row gutter-bottom-xs">
+            <div class="toolbox__left col-12 col-lg">
+                <div class="xsxsx">
+                    <button class="button button--primary button--block" data-dismiss="modal" data-modal="#addProductSuccess">
+                        <span class="button__text">
+                            Create Place
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="toolbox__right col-12 col-lg-auto">
+                <div class="toolbox__right-row row row--xs flex-nowrap">
+                    <div class="col col-lg-auto">
+                        <form class="toolbox__search" asp-action="Index" method="get">
+                            <div class="input-group input-group--white input-group--prepend">
+                                <div class="input-group__prepend">
+                                    <svg class="icon-icon-search">
+                                        <use xlink:href="#icon-search"></use>
+                                    </svg>
+                                </div>
+                                <input class="input" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" placeholder="Search...">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-auto">
+                        <a asp-action="Index" class="button-add button-add--blue">
+                            <span class="button-add__icon">
+                                <svg class="icon-icon-plus">
+                                    <use xlink:href="#icon-refresh"></use>
+                                </svg>
+                            </span><span class="button-add__text"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-wrapper">
+        <div class="table-wrapper__content table-collapse scrollbar-thin scrollbar-visible">
+
+            <table class="table table--spaces">
+                <colgroup>
+                    <col width="70px">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead class="table__header">
+                    <tr class="table__header-row">
+                        <th>
+                            <div class="table__checkbox table__checkbox--all">
+                                <label class="checkbox">
+                                    <input class="js-checkbox-all" type="checkbox"
+                                           data-checkbox-all="product"><span class="checkbox__marker">
+                                        <span class="checkbox__marker-icon">
+                                            <svg viewBox="0 0 14 12">
+                                                <path d="M11.7917 1.2358C12.0798 1.53914 12.0675 2.01865 11.7642 2.30682L5.7036 8.06439C5.40574 8.34735 4.93663 8.34134 4.64613 8.05084L2.22189 5.6266C1.92604 5.33074 1.92604 4.85107 2.22189 4.55522C2.51774 4.25937 2.99741 4.25937 3.29326 4.55522L5.19538 6.45734L10.7206 1.20834C11.024 0.920164 11.5035 0.93246 11.7917 1.2358Z" />
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </th>
+                        <th class="table__th-sort">
+                            <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Name</a>
+                        </th>
+                        <th>
+                            <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Created Date</a>
+                        </th>
+                        <th class="table__th-sort">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="table__row">
+                            <td class="table__td">
+                                <div class="table__checkbox table__checkbox--all">
+                                    <label class="checkbox">
+                                        <input type="checkbox" data-checkbox="product"><span class="checkbox__marker">
+                                            <span class="checkbox__marker-icon">
+                                                <svg viewBox="0 0 14 12">
+                                                    <path d="M11.7917 1.2358C12.0798 1.53914 12.0675 2.01865 11.7642 2.30682L5.7036 8.06439C5.40574 8.34735 4.93663 8.34134 4.64613 8.05084L2.22189 5.6266C1.92604 5.33074 1.92604 4.85107 2.22189 4.55522C2.51774 4.25937 2.99741 4.25937 3.29326 4.55522L5.19538 6.45734L10.7206 1.20834C11.024 0.920164 11.5035 0.93246 11.7917 1.2358Z" />
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="table__td text-dark-theme">@item.Name</td>
+                            <td class="table__td text-light-theme">@item.CreatedTime</td>
+                            <td class="table__td table__actions">
+                                <div class="items-more">
+                                    <button class="items-more__button">
+                                        <svg class="icon-icon-more">
+                                            <use xlink:href="#icon-more"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="dropdown-items dropdown-items--right">
+                                        <div class="dropdown-items__container">
+                                            <ul class="dropdown-items__list">
+                                                <li class="dropdown-items__item">
+                                                    <a class="dropdown-items__link" data-dismiss="modal" data-modal="#readItem_@item.Id">
+                                                        <span class="dropdown-items__link-icon">
+                                                            <svg class="icon-icon-duplicate">
+                                                                <use xlink:href="#icon-invoice"></use>
+                                                            </svg>
+                                                        </span>Detail
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-items__item">
+                                                    <a class="dropdown-items__link" data-dismiss="modal" data-modal="#updateItem_@item.Id">
+                                                        <span class="dropdown-items__link-icon">
+                                                            <svg class="icon-icon-archive">
+                                                                <use xlink:href="#icon-drafts"></use>
+                                                            </svg>
+                                                        </span>Update
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-items__item">
+                                                    <a class="dropdown-items__link" onclick="deleteItem('@item.Id')">
+                                                        <span class="dropdown-items__link-icon">
+                                                            <svg class="icon-icon-trash">
+                                                                <use xlink:href="#icon-trash"></use>
+                                                            </svg>
+                                                        </span>Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table__space">
+                            <td colspan="7"></td>
+                        </tr>
+                        @*Modal Update*@
+                        <div class="modal modal-compact modal-success scrollbar-thin" id="updateItem_@item.Id" data-simplebar>
+                            <div class="modal__overlay" data-dismiss="modal"></div>
+                            <div class="modal__wrap">
+                                <div class="modal__window">
+                                    <form asp-action="Update" method="post" id="updateForm_@item.Id">
+                                        <div class="modal__content">
+                                            <div class="modal__body">
+                                                <h3>Update label</h3>
+                                                <div class="modal__container">
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Id</label>
+                                                        <div class="input-group">
+                                                            <input class="input" name="Id" type="text" placeholder="Name..." value="@item.Id">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Name</label>
+                                                        <div class="input-group">
+                                                            <input class="input" name="Name" type="text" placeholder="Name..." value="@item.Name" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Description</label>
+                                                        <div class="input-group">
+                                                            <input class="input" name="Description" type="text" placeholder="Description..." value="@item.Description" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-compact__buttons">
+                                                <div class="modal-compact__button-item">
+                                                    <button type="submit" id="updateFormBtn_@item.Id" class="modal-compact__button button">
+                                                        <span class="button__text">
+                                                            Update place
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-compact__button-item">
+                                                    <button class="modal-compact__button button" data-dismiss="modal">
+                                                        <span class="button__text">Close</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        @*./ Modal*@
+                         @*Modal detail*@
+                        <div class="modal modal-compact modal-success scrollbar-thin" id="readItem_@item.Id" data-simplebar>
+                            <div class="modal__overlay" data-dismiss="modal"></div>
+                            <div class="modal__wrap">
+                                <div class="modal__window">
+                                        <div class="modal__content">
+                                            <div class="modal__body">
+                                                <div class="modal__container">
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Name</label>
+                                                        <div class="input-group">
+                                                            <input disabled class="input" name="Name" type="text" placeholder="Name..." value="@item.Name" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Description</label>
+                                                        <div class="input-group">
+                                                            <input disabled class="input" name="Color" type="text" placeholder="Description..." value="@item.Description" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*./ Modal*@
+                    }
+                </tbody>
+            </table>
+
+            @{
+                var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+            }
+
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-default @prevDisabled">
+                Previous
+            </a>
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               class="btn btn-default @nextDisabled">
+                Next
+            </a>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $("#createForm").ready(function() {
+            $("#createForm").validate();
+            $("#createFormBtn").click(function() {
+                if ($("#createForm").valid()) {
+                    // Add toast
+                    Toastify({
+                        text: "Thêm mới thành công!",
+                        duration: 3000,
+                        newWindow: true,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        stopOnFocus: true,
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        },
+                        onClick: function() { }
+                    }).showToast();
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 3000);
+                    $("#createForm").submit();
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        // Delete item
+        function deleteItem(id) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success mr-3',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'This item will be deleted?',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                    left top
+                    no-repeat
+                `
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/lims/place/delete/" + id;
+                    swalWithBootstrapButtons.fire(
+                        'Deleted!',
+                        'Your item has been deleted.',
+                        'success'
+                    );
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your item file is safe :)',
+                        'error'
+                    );
+                }
+            });
+        }
+    </script>
+
+    <script>
+    function editItem() {
+        $("#addProductSuccess").modal()
+    }
+    </script>
+}

@@ -1,0 +1,275 @@
+﻿@model LIMS.Common.Helpers.PaginatedList<LIMS.Data.ViewModel.Post.ListPostsViewModel>
+
+@{
+    ViewData["Title"] = "Ur Posts";
+}
+
+@*Modal Create*@
+<div class="modal modal-compact modal-success scrollbar-thin" id="createPost" data-simplebar>
+    <div class="modal__overlay" data-dismiss="modal"></div>
+    <div class="modal__wrap" style="max-width: 700px">
+        <div class="modal__window">
+            <form asp-action="Create" method="post" id="createForm" enctype="multipart/form-data">
+                <div class="modal__content">
+                    <div class="modal__body">
+                        <h3>Create New Post</h3>
+                        <div class="modal__container">
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Title</label>
+                                <div class="input-group">
+                                    <input class="input" name="Title" type="text" placeholder="Your Title..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Content</label>
+                                <div class="input-group">
+                                    <textarea class="input" name="Content" type="text" placeholder="Your Content..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Visited Date</label>
+                                <div class="input-group">
+                                    <input class="input" name="VisitedDate" type="text" id="visitedDate" placeholder="Visited Date ..." required>
+                                </div>
+                            </div>
+                            <br/>
+                            @*Upload multi images *@
+                            <div class="dropzone-wrapper">
+                                <div class="dropzone-desc" style="margin-top: 10px;">
+                                    <p>Click for file picker</p>
+                                </div>
+                                <input id='files' type='file' name="Images" multiple />
+                            </div>
+                            <div id='output_cont'></div>
+                            @*./Upload multi images *@
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Place</label>
+                                <div class="input-group">
+                                    <select class="input" name="PlaceId">
+                                        <option value="">-- Choose Place ---</option>
+                                        @foreach (var item in ViewBag.ListPlaces)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-compact__buttons">
+                        <div class="modal-compact__button-item">
+                            <button type="submit" id="createFormBtn" class="modal-compact__button button">
+                                <span class="button__text">
+                                    Create Memory
+                                </span>
+                            </button>
+                        </div>
+                        <div class="modal-compact__button-item">
+                            <button class="modal-compact__button button" data-dismiss="modal">
+                                <span class="button__text">Close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@*./ Modal*@
+
+
+<div class="container Blog">
+    <a href="#" data-dismiss="modal" data-modal="#createPost" class="create-ur-memory" style="text-align: center;">Create Ur Memory</a>
+    <div class="blog-posts hfeed clearfix" id="grid">
+        <!--Can't find substitution for tag [defaultAdStart]-->
+        @foreach (var item in Model) {
+        <div class="animated">
+            <div class="post hentry clearfix">
+                <span class="entry-date">
+                    <span class="entry-meta-date">
+                        <time datetime="@item.VisitedDate?.ToString("dd/MM/yyyy")">@item.VisitedDate?.ToString("dd/MM/yyyy")</time>
+                    </span>
+                </span>
+                <a class="h-cushometag" href="/lims/post?placeId=@item.PlaceId" rel="tag">
+                    <i class="fa fa-paper-plane-o" style="margin-right: 4px"></i>
+                    @item.PlaceName
+                </a>
+                <div class="post-body entry-content">
+                    <div id="3509534886086682537">
+                        @foreach (var img in item.Images) {
+                            <img class="thumb" src="/posts/images/@img.Path" style="width: 100%;">
+                        }
+                        <div class="entry-wrap">
+                            <h2 class="entry-header">
+                                <a data-dismiss="modal" data-modal="#updatePost_@item.Id">@item.Title</a>
+                            </h2>
+                            <p class="entry-summary clearfix"> @item.Content </p>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <div class="entry-footer">
+                    <ul>
+                        <li><i class="icon-link"></i><a href="#" data-dismiss="modal" data-modal="#updatePost_@item.Id">Update</a></li>
+                    </ul>
+                </div>
+            </div>
+            @*Modal Edit*@
+                <div class="modal modal-compact modal-success scrollbar-thin" id="updatePost_@item.Id" data-simplebar>
+                    <div class="modal__overlay" data-dismiss="modal"></div>
+                    <div class="modal__wrap" style="max-width: 700px">
+                        <div class="modal__window">
+                            <form asp-action="Update" method="post" id="createForm">
+                                <input type="hidden" value="@item.Id" name="Id">
+                                <div class="modal__content">
+                                    <div class="modal__body">
+                                        <h3>Update Post</h3>
+                                        <div class="modal__container">
+                                            <div class="form-group">
+                                                <label style="float: left; font-weight: 500; color: #828282;">Title</label>
+                                                <div class="input-group">
+                                                    <input class="input" name="Title" value="@item.Title" type="text" placeholder="Your Title..." required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label style="float: left; font-weight: 500; color: #828282;">Content</label>
+                                                <div class="input-group">
+                                                    <textarea class="input" name="Content" type="text" placeholder="Your Content..." required>@item.Content</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label style="float: left; font-weight: 500; color: #828282;">Visited Date</label>
+                                                <div class="input-group">
+                                                    <input class="input" name="VisitedDate" type="text" value="@item.VisitedDate" placeholder="Visited Date ..." required>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                            
+                                            <div class="form-group">
+                                                <label style="float: left; font-weight: 500; color: #828282;">Place</label>
+                                                <div class="input-group">
+                                                    <select class="input" name="PlaceId">
+                                                        <option value="">-- Choose Place ---</option>
+                                                        @foreach (var pla in ViewBag.ListPlaces)
+                                                        {
+                                                            <!option @( item.PlaceId == pla.Id ? "selected" : "") value="@pla.Id">@pla.Name</!option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <a href="#" onclick="deleteItem('@item.Id')" style="color: red">Delete Post</a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-compact__buttons">
+                                        <div class="modal-compact__button-item">
+                                            <button type="submit" id="createFormBtn" class="modal-compact__button button">
+                                                <span class="button__text">
+                                                    Update Memory
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-compact__button-item">
+                                            <button class="modal-compact__button button" data-dismiss="modal">
+                                                <span class="button__text">Close</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                @*./ Modal*@
+        </div>
+        
+        }
+        <!--Can't find substitution for tag [adEnd]-->
+    </div>
+</div>
+
+<script>
+    window.onload = function() {
+  //Check File API support
+  if (window.File && window.FileList && window.FileReader) {
+    var filesInput = document.getElementById("files");
+    filesInput.addEventListener("change", function(event) {
+      var files = event.target.files; //FileList object
+      var output = document.getElementById("output_cont");
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        //Only pics
+        if (!file.type.match('image'))
+          continue;
+        var picReader = new FileReader();
+        picReader.addEventListener("load", function(event) {
+          var picFile = event.target;
+          //$('#createForm').remove();
+         // var div = document.createElement("div");
+          imgHTML = "<img src='" + picFile.result + "' title='" + picFile.name + "'/>";
+          $('#output_cont').append(imgHTML);
+        });
+        
+        picReader.readAsDataURL(file);//Read the image
+      }
+    });
+  } else {
+    console.log("Your browser does not support File API");
+  }
+}
+</script>
+
+@section Scripts {
+    <script>
+        // Config datetime picker
+        const visitedDate = MCDatepicker.create({
+            el: '#visitedDate',
+            dateFormat: 'MM/DD/YYYY',
+        })
+    </script>
+
+    <script>
+        // Delete item
+        function deleteItem(id) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success mr-3',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'This item will be deleted?',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                    left top
+                    no-repeat
+                `
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/lims/post/delete/" + id;
+                    swalWithBootstrapButtons.fire(
+                        'Deleted!',
+                        'Your item has been deleted.',
+                        'success'
+                    );
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your item file is safe :)',
+                        'error'
+                    );
+                }
+            });
+        }
+    </script>
+}

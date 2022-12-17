@@ -1,0 +1,686 @@
+﻿@model LIMS.Common.Helpers.PaginatedList<LIMS.Data.ViewModel.Task.ListTasksViewModel>
+@{
+    ViewData["Title"] = "List Tasks";
+}
+
+@*Add Task Modal *@
+<div class="inbox-add modal modal-compact scrollbar-thin" id="addTask" data-simplebar>
+        <div class="modal__overlay" data-dismiss="modal"></div>
+        <div class="modal__wrap">
+            <div class="modal__window">
+                <div class="modal__content">
+                    <button class="modal__close" data-dismiss="modal">
+                        <svg class="icon-icon-cross">
+                            <use xlink:href="#icon-cross"></use>
+                        </svg>
+                    </button>
+                    <div class="modal__header">
+                        <div class="modal__container">
+                            <h2 class="modal__title">Add Task</h2>
+                        </div>
+                    </div>
+                    <form method="POST" asp-action="Create" id="createForm">
+                    <div class="modal__body">
+                        <div class="modal__container">
+                                <div class="row">
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label class="form-label form-label--sm">Title</label>
+                                        <div class="input-group">
+                                            <input class="input" type="text" name="Title"
+                                                value="Task name..." required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label class="form-label form-label--sm">Labels</label>
+                                        <div class="input-group" style="display: block">
+                                            <input type="text" class="input" name="Labels" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label class="form-label form-label--sm">Deadline</label>
+                                        <div class="input-group">
+                                            <input class="input" type="date" name="Deadline" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group form-group--lg">
+                                        <label class="form-label form-label--sm">Notes</label>
+                                        <div class="input-group">
+                                            <textarea class="input" name="Content" required
+                                                rows="6">Task description...</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="modal__footer">
+                        <div class="modal__container">
+                            <div class="row">
+                                <div class="col-auto ml-auto">
+                                    <button class="button button--primary" type="button" id="createFormBtn"><span
+                                            class="button__icon button__icon--left">
+                                            <svg class="icon-icon-plus">
+                                                <use xlink:href="#icon-plus"></use>
+                                            </svg></span><span class="button__text">Add Task</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@*./ Add Task Modal *@
+<div class="todo-grid">
+                <aside class="sidebar-panel scrollbar-thin" id="sidebarPanel" data-simplebar="data-simplebar">
+                    <div class="sidebar-panel__top">
+                        <button class="button button--primary" data-modal="#addTask"><span
+                                class="button__icon button__icon--left">
+                                <svg class="icon-icon-plus">
+                                    <use xlink:href="#icon-plus"></use>
+                                </svg></span><span class="button__text">Add Task</span>
+                        </button>
+                    </div>
+                    <div class="sidebar-panel__content">
+                        <div class="sidebar-panel__nav">
+                            <ul class="sidebar-panel__menu">
+                                <li class="sidebar-panel__menu-item">
+                                    <a class="sidebar-panel__menu-link active" href="/lims/task">
+                                        <svg class="icon-icon-todo">
+                                            <use xlink:href="#icon-todo"></use>
+                                        </svg><span class="sidebar-panel__menu-text">All Tasks</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-panel__nav">
+                            <h3 class="sidebar-panel__nav-title">Filters</h3>
+                            <ul class="sidebar-panel__menu">
+                                <li class="sidebar-panel__menu-item">
+                                    <a class="sidebar-panel__menu-link" href="/lims/task?str=true">
+                                        <svg class="icon-icon-star">
+                                            <use xlink:href="#icon-star"></use>
+                                        </svg><span class="sidebar-panel__menu-text">Starred</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-panel__menu-item">
+                                    <a class="sidebar-panel__menu-link" href="/lims/task?pri=true">
+                                        <svg class="icon-icon-detail">
+                                            <use xlink:href="#icon-detail"></use>
+                                        </svg><span class="sidebar-panel__menu-text">Priority</span>
+                                    </a>
+                                </li>
+                                @*<li class="sidebar-panel__menu-item">
+                                    <a class="sidebar-panel__menu-link" href="#">
+                                        <svg class="icon-icon-clock">
+                                            <use xlink:href="#icon-clock"></use>
+                                        </svg><span class="sidebar-panel__menu-text">Sheduled</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-panel__menu-item">
+                                    <a class="sidebar-panel__menu-link" href="#">
+                                        <svg class="icon-icon-calendar">
+                                            <use xlink:href="#icon-calendar"></use>
+                                        </svg><span class="sidebar-panel__menu-text">Today</span>
+                                    </a>
+                                </li>*@
+                                <li class="sidebar-panel__menu-item">
+                                    <a class="sidebar-panel__menu-link" href="/lims/task?cpl=true">
+                                        <svg class="icon-icon-status">
+                                            <use xlink:href="#icon-status"></use>
+                                        </svg><span class="sidebar-panel__menu-text">Done</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-panel__menu-item">
+                                    <a class="sidebar-panel__menu-link" href="/lims/task?ach=true">
+                                        <svg class="icon-icon-archive">
+                                            <use xlink:href="#icon-archive"></use>
+                                        </svg><span class="sidebar-panel__menu-text">Archive</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-panel__section">
+                            <h3 class="sidebar-panel__section-title">Labels</h3>
+                            <div class="sidebar-panel__labels">
+                                @foreach (var lal in ViewBag.Labels)
+                                {
+                                   <div class="sidebar-panel__labels-item">
+                                       <span class="marker-item color-red" style="background-color: @lal.Color"></span>
+                                       <a href="/lims/task?labelId=@lal.Id">@lal.Name</a>
+                                    </div> 
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="todo-content">
+                    <div class="todo-content__top">
+                        <div class="container">
+                            <div class="row row--xs flex-nowrap align-items-center justify-content-between">
+                                <div class="col">
+                                    <div class="d-flex align-items-center">
+                                        <button class="toggle-sidebar toggle-sidebar--secondary js-toggle-sidebar-panel"
+                                            type="button" data-toggle="#sidebarPanel">
+                                            <svg class="icon-icon-menu">
+                                                <use xlink:href="#icon-menu"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="toggle-search toggle-search--module" type="button"
+                                            data-search="#search0">
+                                            <svg class="icon-icon-search">
+                                                <use xlink:href="#icon-search"></use>
+                                            </svg>
+                                            <svg class="icon-icon-cross">
+                                                <use xlink:href="#icon-cross"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="page-header page-header--inline">
+                                            <h1 class="page-header__title">All Tasks <span class="text-grey">(@ViewBag.NoTask)</span>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto position-static">
+                                    <form class="module-search" asp-action="Index" method="get">
+                                        <div class="input-group input-group--prepend">
+                                            <div class="input-group__prepend">
+                                                <svg class="icon-icon-search">
+                                                    <use xlink:href="#icon-search"></use>
+                                                </svg>
+                                            </div>
+                                            <input class="input" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" placeholder="Search task">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="todo-content__items scrollbar-thin scrollbar-hidden" data-simplebar>
+                        <div class="todo-content__items-horizontal scrollbar-thin scrollbar-visible" data-simplebar>
+                            <div class="container">
+                                <div class="todo-content__items-header">
+                                    <div class="todo-content__items-header-column">
+                                        <div class="ml-auto">
+                                            <label class="checkbox checkbox--circle">
+                                                <input class="js-checkbox-all" type="checkbox"
+                                                    data-checkbox-all="todo-panel"><span class="checkbox__marker"><span
+                                                        class="checkbox__marker-icon"><svg viewBox="0 0 21 18">
+                                                            <path class="border"
+                                                                d="M16.3809 4.29875C16.1581 3.94957 15.6944 3.84715 15.3452 4.06998C14.9961 4.29281 14.8936 4.7565 15.1165 5.10568L16.3809 4.29875ZM12.9024 2.88868C13.2513 3.11197 13.7151 3.01016 13.9384 2.66128C14.1617 2.3124 14.0599 1.84857 13.711 1.62528L12.9024 2.88868ZM16.25 9C16.25 13.0041 13.0041 16.25 9 16.25V17.75C13.8325 17.75 17.75 13.8325 17.75 9H16.25ZM9 16.25C4.99594 16.25 1.75 13.0041 1.75 9H0.25C0.25 13.8325 4.16751 17.75 9 17.75V16.25ZM1.75 9C1.75 4.99594 4.99594 1.75 9 1.75V0.25C4.16751 0.25 0.25 4.16751 0.25 9H1.75ZM15.1165 5.10568C15.8341 6.23014 16.25 7.56535 16.25 9H17.75C17.75 7.27102 17.2478 5.65706 16.3809 4.29875L15.1165 5.10568ZM9 1.75C10.4381 1.75 11.7762 2.16793 12.9024 2.88868L13.711 1.62528C12.3507 0.754648 10.7331 0.25 9 0.25V1.75Z" />
+                                                            <path
+                                                                d="M18.0275 2.42896C18.3156 2.7323 18.3033 3.21181 18 3.49998L8.7036 12.0645C8.40574 12.3475 7.93663 12.3415 7.64613 12.051L5.22189 9.62673C4.92604 9.33088 4.92604 8.85121 5.22189 8.55536C5.51774 8.25951 5.99741 8.25951 6.29326 8.55536L8.19538 10.4575L16.9564 2.4015C17.2598 2.11333 17.7393 2.12563 18.0275 2.42896Z" />
+                                                        </svg></span></span>
+                                            </label>
+                                            <div class="sort sort--down"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="todo-content__items-wrapper">
+                                    <ul class="todo-content__list">
+                                        @foreach (var item in Model) {
+                                        <li class="todo-content__row">
+
+                                    <div class="@if(!item.IsCompleted) { <text>todo-panel</text>} else {<text>todo-panel todo-panel--checked</text>}">
+                                                <div class="todo-panel__column">
+                                                    <button class="todo-panel__button-move">
+                                                        <svg class="icon-icon-move">
+                                                            <use xlink:href="#icon-move"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <label class="checkbox checkbox--circle">
+                                                    @if(item.IsCompleted)
+                                                    {
+                                                        <input type="checkbox" checked="checked" data-checkbox="todo-panel" onchange="updateCompleted('@item.Id')" />
+                                                    } else
+                                                    {
+                                                        <input type="checkbox" data-checkbox="todo-panel" onchange="updateCompleted('@item.Id')" />
+                                                    }
+
+                                                        <span
+                                                            class="checkbox__marker"><span
+                                                                class="checkbox__marker-icon"><svg viewBox="0 0 21 18">
+                                                                    <path class="border"
+                                                                        d="M16.3809 4.29875C16.1581 3.94957 15.6944 3.84715 15.3452 4.06998C14.9961 4.29281 14.8936 4.7565 15.1165 5.10568L16.3809 4.29875ZM12.9024 2.88868C13.2513 3.11197 13.7151 3.01016 13.9384 2.66128C14.1617 2.3124 14.0599 1.84857 13.711 1.62528L12.9024 2.88868ZM16.25 9C16.25 13.0041 13.0041 16.25 9 16.25V17.75C13.8325 17.75 17.75 13.8325 17.75 9H16.25ZM9 16.25C4.99594 16.25 1.75 13.0041 1.75 9H0.25C0.25 13.8325 4.16751 17.75 9 17.75V16.25ZM1.75 9C1.75 4.99594 4.99594 1.75 9 1.75V0.25C4.16751 0.25 0.25 4.16751 0.25 9H1.75ZM15.1165 5.10568C15.8341 6.23014 16.25 7.56535 16.25 9H17.75C17.75 7.27102 17.2478 5.65706 16.3809 4.29875L15.1165 5.10568ZM9 1.75C10.4381 1.75 11.7762 2.16793 12.9024 2.88868L13.711 1.62528C12.3507 0.754648 10.7331 0.25 9 0.25V1.75Z" />
+                                                                    <path
+                                                                        d="M18.0275 2.42896C18.3156 2.7323 18.3033 3.21181 18 3.49998L8.7036 12.0645C8.40574 12.3475 7.93663 12.3415 7.64613 12.051L5.22189 9.62673C4.92604 9.33088 4.92604 8.85121 5.22189 8.55536C5.51774 8.25951 5.99741 8.25951 6.29326 8.55536L8.19538 10.4575L16.9564 2.4015C17.2598 2.11333 17.7393 2.12563 18.0275 2.42896Z" />
+                                                                </svg></span></span>
+                                                    </label>
+                                                </div>
+                                                <div class="todo-panel__column">
+                                                    <div class="todo-panel__text">
+                                                        <h5 class="mb-0">@item.Title
+                                                        </h5><span class="text-sm text-grey">@item.Deadline.ToString("dd/MM/yyyy")</span>
+                                                    </div>
+                                                </div>
+                                                <div class="todo-panel__column">
+                                                    <div class="todo-panel__tags">
+                                                        @foreach (var label in item.labels)
+                                                        {
+                                                            <div class="tag tag--default"><span
+                                                                    class="tag__marker color-teal"></span>
+                                                                    <span class="tag__text">
+                                                                        <a href="/lims/task?labelId=@label.Id">@label.Name</a>
+                                                                    </span>
+                                                            </div>
+                                                        }
+                                                        
+
+                                                    </div>
+                                                </div>
+                                                <div class="todo-panel__column">
+                                                    <div class="todo-panel__details">
+                                                        <label class="todo-panel__detail todo-panel__detail--detail">
+                                                    @if(item.IsPriority)
+                                                    {
+                                                        <input type="checkbox" checked="checked" onchange="updatePriority('@item.Id')"/>
+                                                    } else {
+                                                        <input type="checkbox" onchange="updatePriority('@item.Id')"/>
+                                                    }
+                                                    
+                                                            <span
+                                                                class="todo-panel__detail-marker">
+                                                                <svg class="icon-icon-detail">
+                                                                    <use xlink:href="#icon-detail"></use>
+                                                                </svg></span>
+                                                        </label>
+                                                        <label class="todo-panel__detail todo-panel__detail--star">
+                                                        @if(item.IsStarred)
+                                                        {
+                                                            <input type="checkbox" checked="checked" onchange="updateStart('@item.Id')"/>
+                                                        } else
+                                                        {
+                                                            <input type="checkbox" onchange="updateStart('@item.Id')"/>
+                                                        }
+                                                    
+                                                                <span
+                                                                    class="todo-panel__detail-marker">
+                                                                    <svg class="icon-icon-star">
+                                                                        <use xlink:href="#icon-star"></use>
+                                                                    </svg></span>
+                                                            </label>
+                                                        
+                                                    </div>
+                                                    <div class="todo-panel__more items-more">
+                                                        <button class="items-more__button">
+                                                            <svg class="icon-icon-dots">
+                                                                <use xlink:href="#icon-dots"></use>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="dropdown-items dropdown-items--right">
+                                                            <div class="dropdown-items__container">
+                                                                 <ul class="dropdown-items__list">
+                                                                    <li class="dropdown-items__item">
+                                                                        <a class="dropdown-items__link" data-dismiss="modal" data-modal="#readItem_@item.Id">
+                                                                            <span class="dropdown-items__link-icon">
+                                                                                <svg class="icon-icon-duplicate">
+                                                                                    <use xlink:href="#icon-invoice"></use>
+                                                                                </svg>
+                                                                            </span>Detail
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="dropdown-items__item">
+                                                                        <a class="dropdown-items__link" data-dismiss="modal" data-modal="#updateItem_@item.Id">
+                                                                            <span class="dropdown-items__link-icon">
+                                                                                <svg class="icon-icon-archive">
+                                                                                    <use xlink:href="#icon-drafts"></use>
+                                                                                </svg>
+                                                                            </span>Update
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="dropdown-items__item">
+                                                                        <a class="dropdown-items__link" onclick="archiveItem('@item.Id')">
+                                                                            <span class="dropdown-items__link-icon">
+                                                                                <svg class="icon-icon-archive">
+                                                                                    <use xlink:href="#icon-archive"></use>
+                                                                                </svg>
+                                                                            </span>Archive
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="dropdown-items__item">
+                                                                        <a class="dropdown-items__link" onclick="deleteItem('@item.Id')">
+                                                                            <span class="dropdown-items__link-icon">
+                                                                                <svg class="icon-icon-trash">
+                                                                                    <use xlink:href="#icon-trash"></use>
+                                                                                </svg>
+                                                                            </span>Delete
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        @*Modal Update*@
+                        <div class="modal modal-compact modal-success scrollbar-thin" id="updateItem_@item.Id" data-simplebar>
+                            <div class="modal__overlay" data-dismiss="modal"></div>
+                            <div class="modal__wrap">
+                                <div class="modal__window">
+                                    <form asp-action="Update" method="post" id="updateForm_@item.Id">
+                                        <div class="modal__content">
+                                            <div class="modal__body">
+                                                <h3>Update Task</h3>
+                                                <div class="modal__container">
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Id</label>
+                                                        <div class="input-group">
+                                                            <input class="input" name="Id" type="text" placeholder="Name..." value="@item.Id">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Name</label>
+                                                        <div class="input-group">
+                                                            <input class="input" name="Name" type="text" placeholder="Name..." value="@item.Title" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Deadline</label>
+                                                        <div class="input-group">
+                                                            <input class="input" name="Color" type="text" placeholder="Color..." value="@item.Deadline" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Notes</label>
+                                                        <div class="input-group">
+                                                            <textarea class="input" name="Content" required
+                                                                rows="6">@item.Content</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-compact__buttons">
+                                                <div class="modal-compact__button-item">
+                                                    <button type="submit" id="updateFormBtn_@item.Id" class="modal-compact__button button">
+                                                        <span class="button__text">
+                                                            Update label
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-compact__button-item">
+                                                    <button class="modal-compact__button button" data-dismiss="modal">
+                                                        <span class="button__text">Close</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        @*./ Modal*@
+                         @*Modal detail*@
+                        <div class="modal modal-compact modal-success scrollbar-thin" id="readItem_@item.Id" data-simplebar>
+                            <div class="modal__overlay" data-dismiss="modal"></div>
+                            <div class="modal__wrap">
+                                <div class="modal__window">
+                                        <div class="modal__content">
+                                            <div class="modal__body">
+                                                <div class="modal__container">
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Name</label>
+                                                        <div class="input-group">
+                                                            <input disabled class="input" name="Name" type="text" placeholder="Name..." value="@item.Title" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Deadline</label>
+                                                        <div class="input-group">
+                                                            <input disabled class="input" name="Deadline" type="date" placeholder="Deadline..." value="@item.Deadline.ToString("yyyy-MM-dd")" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 form-group form-group--lg">
+                                                        <label style="float: left; font-weight: 500; color: #828282;">Notes</label>
+                                                        <div class="input-group">
+                                                            <textarea class="input" name="Content" required
+                                                                rows="6">@item.Content</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*./ Modal*@
+                                        }
+
+                                    </ul>
+                                    @{
+                                        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                                        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                                    }
+
+                                    <a asp-action="Index"
+                                       asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                       asp-route-pageNumber="@(Model.PageIndex - 1)"
+                                       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                       class="btn btn-default @prevDisabled">
+                                        Previous
+                                    </a>
+                                    <a asp-action="Index"
+                                       asp-route-sortOrder="@ViewData["CurrentSort"]"
+                                       asp-route-pageNumber="@(Model.PageIndex + 1)"
+                                       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                                       class="btn btn-default @nextDisabled">
+                                        Next
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="backdrop-sidebar-panel"></div>
+            </div>
+
+
+@section Scripts {
+    <script src="/js/bootstrap-tagsinput.js"></script>
+    <script>
+        // Page settings
+        $(".page-content").attr("class", "page-content page-content--full");
+        $(".sidebar").attr("class", "sidebar sidebar--show sidebar--translate");
+        $(".page-home").attr("class", "page-home load sidebar-show sidebar-collapse sidebar-active");
+    </script>
+    <script>
+        // Ajax calling
+        $.ajax({
+            type: 'GET',
+            url: '/lims/task/labels',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function(res) {
+                console.log(res);
+
+                const keys_to_keep = ['name'];
+
+                const redux = array => array.map(o => keys_to_keep.reduce((acc, curr) => {
+                    acc[curr] = o[curr];
+                    return acc;
+                }, {}));
+
+                console.log(redux(res));
+
+                let result = res.map(a => a.name);
+
+                console.log(result);
+
+                $('input[name="Labels"]').amsifySuggestags({
+                    type: 'amsify',
+                    suggestions: result
+                });
+            },
+            error: function(error) {
+                console.log('Failed ');
+            }
+        })
+    </script>
+
+    <script>
+        // Delete item
+        function deleteItem(id) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success mr-3',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'This item will be deleted?',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                    left top
+                    no-repeat
+                `
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/lims/task/delete/" + id;
+                    swalWithBootstrapButtons.fire(
+                        'Deleted!',
+                        'Your item has been deleted.',
+                        'success'
+                    );
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your item is safe :)',
+                        'error'
+                    );
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Archive item
+        function archiveItem(id) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success mr-3',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
+            swalWithBootstrapButtons.fire({
+                title: 'This item will be hidden from list?',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, hide it!',
+                cancelButtonText: 'No, cancel!',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                    left top
+                    no-repeat
+                `
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/lims/task/archive/" + id;
+                    swalWithBootstrapButtons.fire(
+                        'Deleted!',
+                        'Your item has been hidden.',
+                        'success'
+                    );
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your item is safe :)',
+                        'error'
+                    );
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // Validation
+        $("#createForm").ready(function() {
+            $("#createForm").validate();
+            $("#createFormBtn").click(function() {
+                if ($("#createForm").valid()) {
+                    // Add toast
+                    Toastify({
+                        text: "Thêm mới thành công!",
+                        duration: 3000,
+                        newWindow: true,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        stopOnFocus: true,
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        },
+                        onClick: function() { }
+                    }).showToast();
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 3000);
+                    $("#createForm").submit();
+                }
+            });
+
+        });
+    </script>
+
+    <script>
+        // Update start
+        function updateStart(id) {
+            $.ajax({
+                type: 'GET',
+                url: '/lims/task/update-start/' + id,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function(res) {
+                    console.log(res);
+                },
+                error: function(error) {
+                    console.log('Failed');
+                }
+            })
+        }
+
+        // Update priority
+        function updatePriority(id) {
+            $.ajax({
+                type: 'GET',
+                url: '/lims/task/update-priority/' + id,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function(res) {
+                    console.log(res);
+                },
+                error: function(error) {
+                    console.log('Failed');
+                }
+            })
+        }
+
+        // Update completed
+        function updateCompleted(id) {
+            $.ajax({
+                type: 'GET',
+                url: '/lims/task/update-completed/' + id,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function(res) {
+                    console.log(res);
+                },
+                error: function(error) {
+                    console.log('Failed');
+                }
+            })
+        }
+    </script>
+}

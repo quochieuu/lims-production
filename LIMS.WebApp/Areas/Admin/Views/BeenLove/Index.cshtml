@@ -1,0 +1,406 @@
+﻿@model LIMS.Data.Entities.BeenLove
+
+@{
+    ViewData["Title"] = "Been Together";
+}
+
+@*Modal Create*@
+<div class="modal modal-compact modal-success scrollbar-thin" id="createEvent" data-simplebar>
+    <div class="modal__overlay" data-dismiss="modal"></div>
+    <div class="modal__wrap" style="max-width: 700px">
+        <div class="modal__window">
+            <form asp-action="Create" method="post" id="createForm">
+                <div class="modal__content">
+                    <div class="modal__body">
+                        <h3>Setup your event</h3>
+                        <div class="modal__container">
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Name</label>
+                                <div class="input-group">
+                                    <input class="input" name="User1" type="text" placeholder="Your Name..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Dob</label>
+                                <div class="input-group">
+                                    <input class="input" name="AgeUser1" type="text" id="urDob" placeholder="Your Dob..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Darling Name</label>
+                                <div class="input-group">
+                                    <input class="input" name="User2" type="text" placeholder="Your Darling Name..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Darling Dob</label>
+                                <div class="input-group">
+                                    <input class="input" name="AgeUser2" type="text" id="urDarlingDob" placeholder="Your Darling Dob..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Darling Dob</label>
+                                <div class="input-group">
+                                    <input class="input" name="StartDate" type="text" id="urDate" placeholder="Your Date.." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Assign Your Darling</label>
+                                <div class="input-group">
+                                    <select class="input" name="Username2">
+                                        <option value="">-- Assign Your Darling ---</option>
+                                        @foreach (var item in ViewBag.AllUsers)
+                                        {
+                                            <option value="@item.UserName">@item.FullName (@item.UserName)</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-compact__buttons">
+                        <div class="modal-compact__button-item">
+                            <button type="submit" id="createFormBtn" class="modal-compact__button button">
+                                <span class="button__text">
+                                    Create Memory
+                                </span>
+                            </button>
+                        </div>
+                        <div class="modal-compact__button-item">
+                            <button class="modal-compact__button button" data-dismiss="modal">
+                                <span class="button__text">Close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@*./ Modal*@
+
+@*Modal update avatar*@
+<div class="modal modal-compact modal-success scrollbar-thin" id="updateAvatar" data-simplebar>
+    <div class="modal__overlay" data-dismiss="modal"></div>
+    <div class="modal__wrap" style="max-width: 700px;">
+        <div class="modal__window">
+            <form asp-action="UpdateCoupleImage" asp-controller="BeenLove" asp-route-id="@Model.Id" method="post" id="createForm" enctype="multipart/form-data">
+                <div class="modal__content">
+                    <div class="modal__body">
+                        <h3>Update Avatars</h3>
+                        <div class="modal__container" style="display: flex;">
+                            <div class="avatar-upload">
+                                <div class="avatar-edit">
+                                    <input type='file' id="imageUpload" name="AvatarUser1" accept=".png, .jpg, .jpeg" />
+                                    <label for="imageUpload"></label>
+                                </div>
+                                <div class="avatar-preview">
+                                    <div id="imagePreview" style="background-image: url(/img/avatar-placeholder.jpg);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="avatar-upload">
+                                <div class="avatar-edit">
+                                    <input type='file' id="imageUpload2" name="AvatarUser2" accept=".png, .jpg, .jpeg" />
+                                    <label for="imageUpload2"></label>
+                                </div>
+                                <div class="avatar-preview">
+                                    <div id="imagePreview2" style="background-image: url(/img/avatar-placeholder.jpg);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-compact__buttons">
+                        <div class="modal-compact__button-item">
+                            <button type="submit" id="createFormBtn" class="modal-compact__button button">
+                                <span class="button__text">
+                                    Update Avatars
+                                </span>
+                            </button>
+                        </div>
+                        <div class="modal-compact__button-item">
+                            <button class="modal-compact__button button" data-dismiss="modal">
+                                <span class="button__text">Close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@* ./ Modal update avatar*@
+
+@*Modal update*@
+<div class="modal modal-compact modal-success scrollbar-thin" id="addProductSuccess" data-simplebar>
+    <div class="modal__overlay" data-dismiss="modal"></div>
+    <div class="modal__wrap" style="max-width: 700px">
+        <div class="modal__window">
+            <form asp-action="Update" method="post" id="createForm">
+                <div class="modal__content">
+                    <div class="modal__body">
+                        <h3>Update Ur Event</h3>
+                        <div class="modal__container">
+                            <input name="Id" value="@Model.Id" type="hidden"/>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Name</label>
+                                <div class="input-group">
+                                    <input class="input" name="User1" type="text" placeholder="Your Name..." value="@Model.User1" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Dob</label>
+                                <div class="input-group">
+                                    <input class="input" name="AgeUser1" type="text" id="urDob" placeholder="Your Dob..." value="@Model.AgeUser1" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Darling Name</label>
+                                <div class="input-group">
+                                    <input class="input" name="User2" type="text" placeholder="Your Darling Name..." value="@Model.User2" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Darling Dob</label>
+                                <div class="input-group">
+                                    <input class="input" name="AgeUser2" type="text" id="urDarlingDob" value="@Model.AgeUser2" placeholder="Your Darling Dob..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Your Darling Dob</label>
+                                <div class="input-group">
+                                    <input class="input" name="StartDate" type="text" id="urDate" value="@Model.StartDate" placeholder="Your Date.." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label style="float: left; font-weight: 500; color: #828282;">Assign Your Darling</label>
+                                <div class="input-group">
+                                    <select class="input" name="Username2">
+                                        <option value="">-- Assign Your Darling ---</option>
+                                        @foreach (var item in ViewBag.AllUsers)
+                                        {
+                                            <!option value="@item.UserName" @( item.UserName == Model.Username2 ? "selected" : "")>@item.FullName (@item.UserName)</!option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-compact__buttons">
+                        <div class="modal-compact__button-item">
+                            <button type="submit" id="createFormBtn" class="modal-compact__button button">
+                                <span class="button__text">
+                                    Update Your Event
+                                </span>
+                            </button>
+                        </div>
+                        <div class="modal-compact__button-item">
+                            <button class="modal-compact__button button" data-dismiss="modal">
+                                <span class="button__text">Close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@*./ Modal update *@
+<div id="wrapper">
+    <button id="bl-seting-btn" data-dismiss="modal" data-modal="#updateAvatar" style="right: 35px;">
+        <span class="button__text">
+            <span class="dropdown-items__link-icon">
+                <svg class="icon-icon-upload"> <use xlink:href="#icon-upload"></use> </svg>
+            </span>
+        </span>
+    </button>
+    <button id="bl-seting-btn" data-dismiss="modal" data-modal="#addProductSuccess">
+        <span class="button__text">
+            <span class="dropdown-items__link-icon">
+                <svg class="icon-icon-settings">
+                    <use xlink:href="#icon-settings"></use>
+                </svg>
+            </span>
+        </span>
+    </button>
+    <div id="clock-box">
+        <div id="clock">
+            <date>0 DAYS</date>
+            <time>22:54:29</time>
+        </div>
+    </div>
+    <div id="info" style="display: none;">
+        <div class="one">
+            <img class="avt" src="https://i.imgur.com/2yLrhYR.jpg" />
+            <p>@Model.User1</p>
+        </div>
+        <div id="heart">❤<anni>@Model.StartDate.ToString("dd-MM-yyyy")</anni></div>
+        <div class="two">
+            <img class="avt" src="https://i.imgur.com/aKFI8Cd.jpg" />
+            <p>@Model.User2</p>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-bottom: 130px;">
+    <div class="wrap">
+        <div class="couple-img">
+            <div class="wrap2">
+                <div class="man-img">
+                    <img src="/been-together/avatars/@Model.AvatarUser1" />
+                </div>
+                <div class="and-char">&amp;</div>
+                <div class="woman-img">
+                    <img src="/been-together/avatars/@Model.AvatarUser2" />
+                </div>
+            </div>
+            <!-- (end) wrap 2 -->
+            <div class="couple-info">
+                <p class="man-info">
+                    <span class="man-name rig">@Model.User1</span>
+                    <span class="ages-rodiac rig">
+                        <span class="man-ages"><span id="boyage">21</span></span>
+                        <span class="man-zod">Song Tử</span>
+                    </span>
+                </p>
+                <p class="woman-info">
+                    <span class="woman-name lef">@Model.User2</span>
+                    <span class="ages-rodiac lef">
+                        <span class="woman-ages"><span id="girlage">21</span></span>
+                        <span class="woman-zod">Nhân Mã</span>
+                    </span>
+                </p>
+            </div>
+            <!-- special-day -->
+            <div class="special-day">
+                <h2>save the day</h2>
+                <p>@Model.StartDate.ToString("dd.MM.yyyy")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get age
+    function getAge(dateString) {
+        var today = new Date();
+        var birthDate = new Date(dateString);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+    var boy = getAge("@Model.AgeUser1.ToString("yyyy/MM/dd")");
+    document.getElementById("boyage").innerHTML = boy;
+    var girl = getAge("@Model.AgeUser2.ToString("yyyy/MM/dd")");
+    document.getElementById("girlage").innerHTML = girl;
+</script>
+
+<script>
+    // @Model.StartDate.ToString("yyyy-MM-dd") Date("2018-10-08T00:00:00"),
+    const yourDate = new Date("@Model.StartDate.ToString("yyyy-MM-dd")T00:00:00"),
+        music = ['TA'];
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var rootTime = document.querySelector("time");
+
+        document.querySelector("anni").textContent = `${(yourDate.getDate() > 9) ? yourDate.getDate() : "0" + yourDate.getDate()}-${(yourDate.getMonth() > 8) ? (yourDate.getMonth() + 1) : "0" + (yourDate.getMonth() + 1)}-${yourDate.getFullYear()}`;
+
+        document.querySelector("date").textContent = Math.floor(Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24) + " DAYS";
+
+        function olock() {
+            var today = new Date(),
+                hrs = (Math.floor(Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
+                min = (Math.floor(Math.floor((today - yourDate) / 1000) / 60)) % 60,
+                sec = Math.floor((today - yourDate) / 1000) % 60;
+            rootTime.textContent = `${(hrs > 9) ? hrs : "0" + hrs}:${(min > 9) ? min : "0" + min}:${(sec > 9) ? sec : "0" + sec}`;
+        } olock();
+        var timer = setInterval(function() { olock() }, 1000);
+
+        document.getElementsByTagName("body")[0].insertAdjacentHTML(
+            "beforeend",
+            "<div id='mask'></div>"
+        );
+
+    }, false);
+</script>
+
+@section Scripts {
+    <script>
+        // Page settings
+        $("body").attr("style", "background: #fff;");
+    </script>
+
+    <script>
+        // Ajax calling
+        // Check love event created
+        $.ajax({
+            type: 'GET',
+            url: '/lims/been-love/check-been-event-created',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            success: function(res) {
+                console.log(res);
+                if (res) {
+
+                } else {
+                    $("#createEvent").attr("class", "modal modal-compact modal-success scrollbar-thin is-active is-animate");
+                }
+            },
+            error: function(error) {
+                console.log('Failed ');
+            }
+        })
+    </script>
+    <script>
+        // Config datetime picker
+        const urDob = MCDatepicker.create({
+            el: '#urDob',
+            dateFormat: 'MM/DD/YYYY',
+        })
+
+        const urDarlingDob = MCDatepicker.create({
+            el: '#urDarlingDob',
+            dateFormat: 'MM/DD/YYYY',
+        })
+
+        const urDate = MCDatepicker.create({
+            el: '#urDate',
+            dateFormat: 'MM/DD/YYYY',
+        })
+    </script>
+
+    <script>
+    // Preview image upload
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview2').css('background-image', 'url('+e.target.result +')');
+                $('#imagePreview2').hide();
+                $('#imagePreview2').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").change(function() {
+        readURL(this);
+    });
+    $("#imageUpload2").change(function() {
+        readURL2(this);
+    });
+</script>
+}
