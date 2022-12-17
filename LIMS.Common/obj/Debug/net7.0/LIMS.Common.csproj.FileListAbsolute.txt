@@ -10,3 +10,5 @@ E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.dll
 E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\refint\LIMS.Common.dll
 E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.pdb
 E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\ref\LIMS.Common.dll
+E:\LimsPlatform\lims-production\LIMS.Common\bin\Debug\net7.0\LIMS.Common.runtimeconfig.json
+E:\LimsPlatform\lims-production\LIMS.Common\obj\Debug\net7.0\LIMS.Common.genruntimeconfig.cache
