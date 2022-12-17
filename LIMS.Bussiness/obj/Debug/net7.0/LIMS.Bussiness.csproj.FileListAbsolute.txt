@@ -10,3 +10,10 @@ E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.d
 E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\refint\LIMS.Bussiness.dll
 E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.pdb
 E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\ref\LIMS.Bussiness.dll
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Common.dll
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Data.dll
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Infrastructure.dll
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Common.pdb
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Data.pdb
+E:\LimsPlatform\lims-production\LIMS.Bussiness\bin\Debug\net7.0\LIMS.Infrastructure.pdb
+E:\LimsPlatform\lims-production\LIMS.Bussiness\obj\Debug\net7.0\LIMS.Bussiness.csproj.CopyComplete

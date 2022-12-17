@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LIMS.Common\LIMS.Common.csproj" />
+    <ProjectReference Include="..\LIMS.Data\LIMS.Data.csproj" />
+    <ProjectReference Include="..\LIMS.Infrastructure\LIMS.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
