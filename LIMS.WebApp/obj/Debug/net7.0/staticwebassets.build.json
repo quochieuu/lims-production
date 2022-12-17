@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q1SBFmcaDjAzH7hNOFzgrmVctebgn11630Dy7TUmx9I=",
+  "Hash": "4sfAfa1oN9vtu13zH1pxQpxXux+Z2o1o1AKO3ppmBD0=",
   "Source": "LIMS.WebApp",
   "BasePath": "_content/LIMS.WebApp",
   "Mode": "Default",
@@ -1324,6 +1324,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\ui-kit.html"
+    },
+    {
+      "Identity": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\been-together\\avatars\\15c02dcf-f422-4080-8a87-821915c1f4a4.jpg",
+      "SourceId": "LIMS.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\",
+      "BasePath": "_content/LIMS.WebApp",
+      "RelativePath": "been-together/avatars/15c02dcf-f422-4080-8a87-821915c1f4a4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\been-together\\avatars\\15c02dcf-f422-4080-8a87-821915c1f4a4.jpg"
+    },
+    {
+      "Identity": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\been-together\\avatars\\50f3bbad-1f0a-4e3a-9c49-678cc4921217.jpg",
+      "SourceId": "LIMS.WebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\",
+      "BasePath": "_content/LIMS.WebApp",
+      "RelativePath": "been-together/avatars/50f3bbad-1f0a-4e3a-9c49-678cc4921217.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\been-together\\avatars\\50f3bbad-1f0a-4e3a-9c49-678cc4921217.jpg"
     },
     {
       "Identity": "E:\\LimsPlatform\\lims-production\\LIMS.WebApp\\wwwroot\\been-together\\avatars\\85ea6f2e-9eee-4625-afb9-e01830344937.jpg",

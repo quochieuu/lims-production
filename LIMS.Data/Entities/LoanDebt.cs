@@ -3,9 +3,9 @@
     public class LoanDebt : AuditableBaseEntity
     {
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string? Note { get; set; }
         public decimal Amount { get; set; }
         public int Type { get; set; } // 1. Loan // 2. Debt
-        public DateTime Deadline { get; set; }
+        public DateTime Duration { get; set; }
     }
 }

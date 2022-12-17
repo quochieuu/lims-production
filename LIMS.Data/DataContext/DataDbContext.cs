@@ -34,6 +34,7 @@ namespace LIMS.Data.DataContext
             modelBuilder.ApplyConfiguration(new EventConfiguration());
             modelBuilder.ApplyConfiguration(new LabelConfiguration());
             modelBuilder.ApplyConfiguration(new LoanDebtConfiguration());
+            modelBuilder.ApplyConfiguration(new LoanDebtCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new PostCommentConfiguration());
             modelBuilder.ApplyConfiguration(new PostCommentImageConfiguration());
             modelBuilder.ApplyConfiguration(new PostConfiguration());
@@ -61,6 +62,7 @@ namespace LIMS.Data.DataContext
         public DbSet<Event> Events { get; set; }
         public DbSet<Label> Labels { get; set; }
         public DbSet<LoanDebt> LoanDebts { get; set; }
+        public DbSet<LoanDebtCategory> LoanDebtCategories { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostComment> PostComments { get; set; }
         public DbSet<PostCommentImage> PostCommentImages { get; set; }
