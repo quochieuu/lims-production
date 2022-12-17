@@ -10,3 +10,6 @@ E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infras
 E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\refint\LIMS.Infrastructure.dll
 E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.pdb
 E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\ref\LIMS.Infrastructure.dll
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\bin\Debug\net7.0\LIMS.Data.dll
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\bin\Debug\net7.0\LIMS.Data.pdb
+E:\LimsPlatform\lims-production\LIMS.Infrastructure\obj\Debug\net7.0\LIMS.Infrastructure.csproj.CopyComplete
